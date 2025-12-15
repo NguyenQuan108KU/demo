@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class FoodSlot : MonoBehaviour
 {
-    public Image _imgFood;
-    private Color _normalColor = new Color(1f, 1f, 1f, 1f);
-    private Color _fadeColor = new Color(1f, 1f, 1f, 0.5f);
+    private Image _imgFood;
 
     private void Awake()
     {
@@ -23,16 +21,6 @@ public class FoodSlot : MonoBehaviour
     public void OnActiveFood(bool active)
     {
         _imgFood?.gameObject.SetActive(active);
-    }
-    public void OnFadeFood()
-    {
-        this.OnActiveFood(true);
-        _imgFood.color = _fadeColor;    
-    }
-    public void OnHideFood()
-    {
-        this.OnActiveFood(true);
-        _imgFood.color = _normalColor;
     }
     public void Clear()
     {
