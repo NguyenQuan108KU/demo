@@ -64,6 +64,8 @@ public class DropDrag : MonoBehaviour
                 {
                     dropSlot.OnSetSlot(_currentFood.GetSpriteFood);
                     _currentFood.Clear();
+
+                    dropSlot.NotifyChanged();
                     dropped = true;
                 }
 
@@ -72,12 +74,11 @@ public class DropDrag : MonoBehaviour
                     _currentFood.OnActiveFood(true);
                 }
             }
+
             _isDragging = false;
             _currentFood = null;
             _cacheFood = null;
         }
-
-
     }
 
     void StartDrag()
